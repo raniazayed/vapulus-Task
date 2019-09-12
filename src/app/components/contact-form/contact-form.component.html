@@ -1,0 +1,82 @@
+<div class="container pt-4 mb-4 pb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-12 form pt-3 pr-3 pl-3">
+      <h2 class="mb-3 pb-2 border-bottom">Add a New Contact</h2>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" class="pt-2">
+        <!-- PROFILE IMAGE -->
+        <div class="form-group col-md-12 text-center col-sm-12">
+          <img [src]="default" class="" style="width:100px;height: 100px;" alt="">
+          <label for="file-upload" class="custom-file-upload d-block  mr-2">
+            Add Photo
+          </label>
+          <input type="file" formControlName="image" id="file-upload" #file accept="image/"
+            (change)="onFileSelected(file.files)" maxFileSize="200000">
+          <span *ngIf="image.invalid &&image.touched" class="d-block">
+            this is field is required
+          </span>
+        </div>
+        <!-- FIRST NAME -->
+        <div class="form-group">
+          <mat-form-field class="example-full-width d-block">
+            <input matInput placeholder="First Name" value="" formControlName="firstName">
+          </mat-form-field>
+          <span *ngIf="firstName.invalid &&firstName.touched" class="red d-block">
+            this is field is required
+          </span>
+        </div>
+        <!-- LAST NAME -->
+        <div class="form-group">
+          <mat-form-field class="example-full-width d-block">
+            <input matInput placeholder="Last Name" value="" formControlName="lastName">
+          </mat-form-field>
+          <span *ngIf="lastName.invalid &&lastName.touched" class="red d-block">
+            this is field is required
+          </span>
+        </div>
+       
+          <div class="form-group ">
+            <mat-form-field class="example-full-width d-block">
+              <input matInput placeholder="Mobile Number" type="text" value="" formControlName="mobileNumber">
+            </mat-form-field>
+            <span *ngIf="mobileNumber.invalid &&mobileNumber.touched" class="red
+            d-block">
+              <span *ngIf="mobileNumber.errors['required']">
+                this is field is required
+              </span>
+              <span *ngIf="mobileNumber.errors['Phoneerror'] &&
+              !mobileNumber.errors['required']">
+                mobile Number is incorrect
+              </span>
+            </span>
+          </div>
+        <!-- EMAIL ADDRESS -->
+        <div class="form-group">
+          <mat-form-field class="example-full-width d-block">
+            <input matInput placeholder="Email" value="" formControlName="email">
+          </mat-form-field>
+          <span *ngIf="!email.valid &&email.touched" class="red">
+            <span *ngIf="email.errors['required']">
+              this is field is required
+            </span>
+            <span *ngIf="email.errors['validationError']&& !email.errors['required']">
+              Email is in correct
+            </span>
+          </span>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="w-50">
+            <div class="col-md-12">
+              <button [disabled]="contactForm.invalid" type="submit"
+                class="btn btn-primary pt-2 pb-2 pr-5 pl-5 mb-2 w-100 d-block">Add
+                Contact</button>
+            </div>
+            <div class="col-md-12">
+              <button type="button" (click)="cancelForm()"
+                class="btn btn-danger text-center pt-2 pb-2 pr-5 pl-5 w-100 mb-4">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.list{
+    border: 1px dotted rgb(204, 204, 204);
+    .search{
+        border-radius: 15px;
+    }
+   
+    .inputsearch{
+        background: rgb(208, 207, 212);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 10px;
+        position: relative;
+        input[placholder]{
+            color: rgb(204, 204, 204);
+
+        }
+     
+        input:focus {
+         
+            .inputsearch i{
+                display: none
+            }
+        }
+        i{
+            position: absolute;
+            top: 22px;
+            right: 380px;
+            color: rgb(204, 204, 204);
+
+        }
+    }
+    
+    i{
+        color: rgb(141, 141, 141);
+        font-size: 20px
+    }
+    h3{
+        font-size: 15px
+    }
+    .media,.border-bottom{
+        border-bottom: 1px solid rgb(204, 204, 204) !important
+    }
+}
+img{
+    border: 1px solid none;
+    border-radius: 50%;
+}
+.grey-color{
+    background: #e6e6e6;
+    color: rgb(86, 86, 86);
+    font-size: 15px
+}
+.btn-none{
+    border: none;
+    background: none
+}
+h4{
+    background: rgb(248, 248, 248);
+    font-size: 15px
+}
+.email{
+    color: rgb(198, 198, 198)
+}
+.name{
+    color: rgb(145, 145, 145);
+    font-size: 15px
+}
+.letter{
+    color: rgb(132, 132, 132);
+    font-size: 15px;
+    outline: none
+}
